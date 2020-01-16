@@ -1,0 +1,549 @@
+/* Single colomn layout */
+
+/* body */
+body {
+    background-color: white;
+    font-family: "Open Sans", "Times New Roman";
+    margin: auto;
+}
+
+h1 {
+    color: white;
+    margin-left: .5em;
+    margin-top: .2em;
+    max-width: 60%;
+}
+
+h2 {
+    background-color: white;
+    color: grey;
+    margin: 0.4em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+h3 {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+/* header */
+header {
+    background-color: rgba(6, 24, 61);
+    margin: 0;
+    width: 100%;
+}
+
+/* ul met logo en profiel-icoon, naast elkaar in de header */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+}
+
+/* eurostar logo */
+header ul li:first-of-type img {
+    margin-top: 0.4em;
+    padding: .7em;
+    width: 80%;
+}
+
+/* profiel icoon */
+header ul li:nth-of-type(2) img {
+    margin-right: 1.3em;
+    margin-top: 1.2em;
+    transition: all .5s ease-in-out;
+    width: 1.7em;
+}
+
+/* hover op het profiel icoon  */
+header ul li:nth-of-type(2) img:hover {
+    /* bron voor transition en transform:https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/*/
+    transform: scale(1.2);
+    /* einde bron*/
+}
+
+/* begin article */
+header > article {
+    background-image: url("images/meisje.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 100px 100px 100px rgba(0, 0, 0, 0.9);
+    height: 15em;
+    max-width: 100%;
+    padding: 2%;
+}
+
+/* a in article */
+header article > a {
+    background-color: rgb(255, 236, 0);
+    border: 0;
+    /*bron: van Eurostar.nl (update: 15 jan 2020 */
+    border-radius: 0.25em;
+    box-shadow: rgb(210, 184, 43) 0px -2px 0px 0px inset, rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+    /* einde bron */
+    color: rgb(85, 86, 90);
+    margin-left: .5em;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:color 0.5s ease-out;
+}
+
+/* hover in article in de header */
+header article > a:hover {
+    color: rgba(6, 24, 61);
+    font-weight:400;
+
+}
+
+/* div laadbalk default state*/
+/* bron: voorbeeld Joost Faber in de les */
+div.loader {
+    background-color: white;
+    height: 1.5em;
+    opacity: 0.5;
+    transform: translateX(-110vw);
+    transition: all .5s cubic-bezier(.17, .67, .83, .67);
+    width: 110vw;
+}
+
+/* div laadbalk loaded state*/
+div.loaded {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* einde bron: voorbeeld Joost Faber in de les */
+/*einde header*/
+
+/*begin main*/
+main {
+    background-color: rgb(33, 181, 201);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 2em;
+}
+
+/* 3 uls waar 3 tabjes/buttons inzitten*/
+main ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* eerste tab/button */
+main > ul:first-of-type li button {
+    background-color: rgba(6, 24, 61, .8);
+    border: none;
+    border-radius: .25em .25em 0em 0em;
+    color: white;
+    margin-right: 0.3rem;
+    padding: 1.1rem;
+    text-transform: uppercase;
+    transition:background-color 1s ease-in-out;
+}
+
+/* tweede tab/button */
+main > ul:first-of-type li:nth-of-type(2) button {
+    background-color: white;
+    color: grey;
+}
+
+/* derde tab/button */
+main > ul:first-of-type li:nth-of-type(3) button {
+    background-color: white;
+    color: grey;
+}
+
+/* hover 3 tabjes/buttons */
+main > ul:first-of-type li:nth-of-type(2) button:hover{
+    background-color: rgba(6, 24, 61, .8);
+    color:white;
+}
+
+main > ul:first-of-type li:nth-of-type(3) button:hover {
+    background-color: rgba(6, 24, 61, .8);
+    color:white;
+}
+
+/* begin formulier */
+main form {
+    /*border:0;*/
+    background-color: darkblue;
+    background-color: rgba(6, 24, 61, 0.8);
+    border-radius: 0 .25em .25em 0;
+    padding: 1rem;
+}
+
+/*2 fieldsets in het formulier, want er zijn 2 onderdelen: lengte en vormgeving. Er zitten dus ook 2 legends in */
+main form fieldset {
+    border: none;
+}
+
+/* Legends in het formulier */
+main form fieldset legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: .5rem;
+}
+
+/* dit divje heb ik gebruikt om de achtergrond van de twee fieldsets wit te krijgen */
+main form div {
+    background-color: white;
+    border-radius: .25em;
+}
+
+/* dit is de stijl van de submitknop*/
+main form input[type=submit] {
+    background-color: rgb(255, 236, 0);
+    border: 0;
+    border-radius: 0.25em;;
+    color: rgb(85, 86, 90);
+    font-size: 1em;
+    margin-bottom: .4em;
+    margin-top: .7em;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:color 0.5s ease-in-out;
+    /*bron:https://stackoverflow.com/questions/12992183/css-transition-fade-on-hover/16345962 */
+    width: 100%;
+}
+
+/* hover van de submit knop */
+main form .search:hover {
+    color: rgba(6, 24, 61);
+    font-weight:400;
+}
+
+/* dit is de 'doe een gok' link, onder de submit knop */
+main form a {
+    background-color: rgb(33, 181, 201);
+    border: 0;
+    border-radius: 0.25em;;
+    color: rgb(85, 86, 90);
+    display: block;
+    font-size: 1em;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition:color 0.5s ease-in-out;
+}
+
+/* hover 'doe een gok' link onder de submit knop*/
+main form a:hover {
+    color: rgba(6, 24, 61);
+    font-weight:400;
+}
+
+/* einde formulier */
+
+/* begin class overzicht (grid) verdeeld in 3 classes */
+.overzicht {
+    display: grid;
+    max-width: 100%;
+}
+
+/* de article zit in een link zodat je op het vlak van de article kunt klikken en niet allen op de tekts*/
+.overzicht div a {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    grid-gap:2em;
+    min-height: 10em;
+    justify-content: center;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.6s ease-in-out;
+}
+
+/* hover van deze link */
+.overzicht div a:hover {
+    opacity: 0.6;
+}
+
+/* streepje onder h2 (bron van tom william, student CMD) */
+.overzicht h2:after {
+    border-bottom: 3px solid #7DD3DF;
+    content: "";
+    display: block;
+    margin: 0 auto;
+    max-width: 2em;
+    padding-top: 0.3em;
+}
+/*einde bron/*
+
+/* dit zijn de algemene instellingen die gelden voor alle articles in class overzicht */
+.overzicht a article {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* h3 in class overzicht */
+.overzicht a article h3 {
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    margin-bottom: 0;
+    max-width: 18em;
+    padding: 0 1.25em;
+    position: relative;
+    text-align: center;
+    z-index: 15;
+}
+
+/* eerste img  in het article in class overzicht */
+.overzicht article img:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+/* tweede img  in het article in class overzicht */
+.overzicht article img:nth-of-type(2) {
+    margin-bottom: 1em;
+    position: relative;
+    transition: all 0.9s;
+    z-index: 15;
+}
+
+/* hover op de tweede img in het article in class overzicht */
+.overzicht article img:nth-of-type(2):hover {
+    transform: scale(1.1);
+}
+
+.overzicht article img:nth-of-type(3) {
+    left: 1.2em;
+    position: absolute;
+    top: 1.2em;
+    z-index: 15;
+}
+
+/* home id - dit geldt alleen voor de tweede img in het article in class overzicht op de homepage-verhalenpag.*/
+#home .overzicht article img:nth-of-type(2) {
+    margin-top: 1em;
+}
+
+/* hiermee geef ik de articles in class overzicht een overlay */
+.overzicht article:before {
+    background-color: rgba(0, 0, 0, .5);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+}
+
+/* home id - dit geldt alleen voor de articles in class overzicht op de homepage-verhalenpag. - geen overlay op de articles zoals bij de overzichtspagina */
+#home .overzicht article:before {
+    display: none;
+}
+
+/* p in class overzicht */
+.overzicht a article p {
+    margin-bottom: 1em;
+    margin-top: 0.6em;
+    position: relative;
+    text-align: center;
+    z-index: 6;
+}
+
+/* buttons in class overzicht */
+.overzicht article button {
+    background-color: transparent;
+    background-image: url("images/add.svg");
+    background-repeat: no-repeat;
+    border:none;
+    height: 3em;
+    position: absolute;
+    right: 1.2em;
+    top: 1.2em;
+    /*bron: an introduction: https://thoughtbot.com/blog/transitions-and-transforms */
+    transition: all 0.7s;
+    /* einde bron */
+    width: 3em;
+    z-index: 10;
+}
+
+/* hover buttons in class overzicht */
+.overzicht article button:hover {
+    /*bron: an introduction: https://thoughtbot.com/blog/transitions-and-transforms */
+    transform: scale(1.6);
+    /* einde bron */
+}
+
+/* einde algemene instellingen /*
+
+/*specifieke instellingen voor class:verder */
+.overzicht div:first-of-type a {
+    background-color: rgb(36, 168, 190);
+    border-color: rgb(85, 86, 90);
+    color: white;
+
+}
+
+/*</>*/
+
+/*specifieke instellingen voor class:aanbev */
+.overzicht div:nth-of-type(1) a {
+    margin-top:0.3em;
+}
+
+.overzicht div:nth-of-type(2) a {
+    background-color: rgb(36, 168, 190);
+    color: white;
+    margin-top: 0.3em;
+}
+
+/*</>*/
+
+/*specifieke instellingen voor class:vormg */
+.overzicht div:nth-of-type(3) a {
+    background-color: rgb(230, 230, 231);
+    margin-top: 0.3em;
+}
+
+#home .overzicht div:nth-of-type(3) a h3 {
+    color: rgb(6, 24, 61);
+}
+
+#home .overzicht p {
+    color: rgb(86, 87, 91);
+}
+
+/*</>*/
+
+/* begin footer */
+footer p {
+    color: black;
+    margin-left: 1em;
+}
+/* einde footer */
+
+/* Media queries */
+/* Mobiel exclusief volgorde is anders */
+@media (max-width: 40em) {
+    .overzicht h2 {
+        order: -2;
+    }
+
+    .overzicht div.aanbev {
+        order: -1;
+    }
+}
+
+/* Tab/Medium */
+@media (min-width: 40em) {
+     main form {
+        margin: 0 auto;
+    }
+
+    main ul {
+        margin: 0 auto;
+    }
+
+    .overzicht {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .overzicht h2,
+    .overzicht .vormg {
+        grid-column: span 2;
+    }
+
+    .overzicht .verder {
+        display: grid;
+        grid-row: span 2;
+    }
+
+    .overzicht .vormg {
+        display: grid;
+        grid-gap:0.3em;
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+
+    .overzicht div:nth-of-type(2) a:first-child {
+        background-image: url("images/decock2.svg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        margin-left: 0.3em;
+    }
+
+    .overzicht div:nth-of-type(2) a:nth-of-type(2) {
+        background-image: url("images/lepra2.svg");
+        background-position: center;
+        background-size: cover;
+        margin-left: 0.3em;
+    }
+
+}
+
+@media (min-width: 60em) {
+    .overzicht {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .overzicht h2 {
+        grid-column: span 3;
+    }
+
+    .overzicht .aanbev {
+        display: grid;
+        margin-right:0.3em;
+    }
+
+    .overzicht .vormg {
+        display: block;
+        grid-column: span 1;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+
+
+/* bronnen
+
+https://css-tricks.com/snippets/css/complete-guide-grid/
+
+https://www.w3schools.com/css/tryit.asp?filename=trycss_grid_grid-column_line
+
+https://www.w3schools.com/css/css_grid_item.asp
+
+https://github.com/CSSLint/csslint/wiki/require-fallback-colors
+
+https://stackoverflow.com/questions/38367002/make-entire-article-tag-a-link
+
+https://www.w3schools.com/tags/ref_pxtoemconversion.asp
+
+http://tomwilliam.nl/eurostar/
+
+https://www.w3schools.com/cssref/css_selectors.asp
+
+https://www.w3schools.com/cssref/pr_font_weight.asp
+
+https://gist.github.com/marcol/3979586
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+https://www.w3schools.com/cssref/pr_background-attachment.asp
+
+https://css-tricks.com/snippets/css/css-box-shadow/
+
+
+*/
